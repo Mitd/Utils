@@ -14,17 +14,23 @@ package info.mitd.utils
 		 * @return result string with replaced characters
 		 */
 		public static function replaceChars($string:String, $replaceDict:Dictionary) : String {
-			$string = $string.toUpperCase();
 			var resultString:String = "";
 			var l:uint = $string.length;
 			var i:uint = 0;
 			var char:String;
+			var charUpperCase:String;
+//			var isUpperCase:Boolean = false;
 			while (i < l) {
 				char = $string.charAt(i);
-				if ($replaceDict[char]) { 
-					char = $replaceDict[char];
+				charUpperCase = char.toUpperCase();
+//				isUpperCase = (charUpperCase == char);
+				if ($replaceDict[charUpperCase]) { 
+					charUpperCase = $replaceDict[charUpperCase];
 				}
-				resultString += char;
+//				if(!isUpperCase) {
+//					charUpperCase = charUpperCase.toLowerCase();
+//				}
+				resultString += charUpperCase;
 				i++;
 			}
 			return resultString;

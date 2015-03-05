@@ -11,6 +11,7 @@ package
 		{
 			var str:String = "Если бы мишки были пчелами!";
 			var res:String = CharReplacer.replaceChars(str, RussianToNumbers.dict);
+			trace(res);
 		}
 	}
 }
